@@ -1,8 +1,10 @@
 # import itertools
+import time
 
-tr = [[5],[1,7],[3,4,6],[8,4,3,1]]
 
-tr1 = [[55], [94, 48], [95, 30, 96], [77, 71, 26, 67]]
+tr = [[5],[1,7],[3,4,6],[8,4,3,1]] # 21
+
+tr1 = [[55], [94, 48], [95, 30, 96], [77, 71, 26, 67]] # 321
 
 tr2  = [[55], 
        [94, 48], 
@@ -21,7 +23,7 @@ tr2  = [[55],
        [44, 25, 67, 84, 71, 67, 11, 61, 40, 57, 58, 89, 40, 56, 36],
        [85, 32, 25, 85, 57, 48, 84, 35, 47, 62, 17, 1, 1, 99, 89, 52],
        [6, 71, 28, 75, 94, 48, 37, 10, 23, 51, 6, 48, 53, 18, 74, 98, 15],
-       [27, 2, 92, 23, 8, 71, 76, 84, 15, 52, 92, 63, 81, 10, 44, 10, 69, 93]]
+       [27, 2, 92, 23, 8, 71, 76, 84, 15, 52, 92, 63, 81, 10, 44, 10, 69, 93]] # 1320
 
 
 # temptri=list(itertools.product(*tr))
@@ -30,7 +32,24 @@ tr2  = [[55],
 def max_path(tr, i, j):
     step = len(tr)
     if i == step:
-    	return 0
+        return 0
     return tr[i][j] + max(max_path(tr, i+1, j), max_path(tr, i+1, j+1))
 
-print(max_path(tr1, 0, 0))    
+
+# def max_path_bottom_up(tr):
+#     while len(tr)>1:
+#         t0 = tr.pop()
+#         t1 = tr.pop()
+#         tr.append([max(t0[i], t0[i+1]) + t for i,t in enumerate(t1)])
+#     return tr[0][0]    
+
+def main():
+    print(max_path(tr2, 0, 0))
+    # print(max_path_bottom_up(tr2))
+
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print("--- %s seconds ---" % (time.time() - start_time))
+    main()
+
