@@ -1,7 +1,7 @@
 import time
 
 
-tr = [[5],[1,7],[3,4,6],[8,4,3,1]] # 21
+tr = [[5], [1, 7], [3, 4, 6], [8, 4, 3, 1]] # 21
 
 
 class InvalidInputError(Exception):
@@ -21,22 +21,22 @@ class InvalidNumberError(Exception):
 
 
 def max_path(tr, i=0, j=0):
-    # try:
 
     # 1 check for array - IvalidInputError
     # 2 check len  - InvalidLengthError
     # 3 check for int in array - InvalidNumberError
-
+    #
     # try:
-    #     for i in range(len(tr)-1):
-    #         if len(tr[i+1])-len(tr[i]) != 1:
-    #             raise InvalidLengthError
+    #     # for i in range(len(tr)-1):
+    #     #     if len(tr[i+1])-len(tr[i]) != 1:
+    #     #         raise InvalidLengthError
+    #     n = []
     #     for row in tr:
     #         for num in row:
-    #             if not int(num):
-    #                 raise InvalidInputError
-    # except InvalidInputError:
-    #     print("Incorrect input value")
+    #             n.append(int(num))
+    #     raise InvalidInputError("Incorrect input value")
+    # except InvalidInputError as e:
+    #     print(e)
     # except InvalidLengthError:
     #     print("Incorrect length of triangle")
 

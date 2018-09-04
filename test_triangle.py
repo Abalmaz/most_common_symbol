@@ -1,11 +1,11 @@
 import pytest
 from triangle_max_path import max_path
 
-ctr = [[5],[1,7,7],[3,4,6],[8,4,3,1]] # 21
+ctr = [[5], [1, 7, 7], [3, 4, 6], [8, 4, 3, 1]]  # 21
 
 ctr1 = [[55], [94, 48], [95, 30, 96], [77, 71, 26, 67]] # 321
 
-ctr2  = [[55],
+ctr2 = [[55],
        [94, 48],
        [95, 30, 96],
        [77, 71, 26, 67],
@@ -25,14 +25,15 @@ ctr2  = [[55],
        [27, 2, 92, 23, 8, 71, 76, 84, 15, 52, 92, 63, 81, 10, 44, 10, 69, 93]] # 1320
 
 tr = [['55'], [94, 48], [95, 30, 96], [77, 71, 26, 67]]
-tr1 = [['0'], [0, 0], [0, 0, 0]]
+tr1 = [[0], [0, 0], [0, 0, '0']]
 tr2 = [[55], ['94', 48, 48], [95, 30, 96], [77, 71, 26, 67]]
 
 tri = [tr, tr1, tr2]
 
 
-# def test_correct_sum():
-#     assert max_path(tri, 0, 0) == 321
+@pytest.mark.parametrize("ctr, expected", [(ctr, 21), (ctr1, 321), (ctr2, 1320)])
+def test_correct_sum(ctr, expected):
+    assert max_path(ctr) == expected
 
 
 @pytest.mark.parametrize("tri", tri)

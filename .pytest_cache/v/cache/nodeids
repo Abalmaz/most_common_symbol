@@ -1,1 +1,5 @@
-[]
+[
+  "test_triangle.py::test_correct_sum[tri0-21]",
+  "test_triangle.py::test_correct_sum[tri1-321]",
+  "test_triangle.py::test_correct_sum[tri2-1320]"
+]
