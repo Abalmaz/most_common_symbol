@@ -1,1 +1,5 @@
-{}
+{
+  "test_triangle.py": true,
+  "test_triangle.py::test_correct_sum": true,
+  "test_triangle.py::test_max_path[tri3]": true
+}
